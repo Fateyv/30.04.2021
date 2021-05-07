@@ -1,5 +1,5 @@
 function getOperator() {
-    let answerOperator = ''
+    let answerOperator = '';
     do {
         answerOperator = prompt('Enter the operation you want to do (+ - / *)');
     } while ((answerOperator !== '+') && (answerOperator !== '-') && (answerOperator !== '*') && (answerOperator !== '/'))
@@ -7,27 +7,15 @@ function getOperator() {
 }
 const operator = getOperator();
 
-function getFirstNumber() {
+function getNumber(message) {
     let answerFirstNumber = '';
-    const valid = true;
     do {
-        answerFirstNumber = prompt('Enter the first number');
-    } while (valid === isNaN(answerFirstNumber))
+        answerFirstNumber = prompt(message);
+    } while (isNaN(answerFirstNumber))
     return answerFirstNumber;
 }
-
-const firstNumber = +getFirstNumber();
-
-function getSecondNumber() {
-    let answerSecondNumber = '';
-    const valid = true;
-    do {
-        answerSecondNumber = prompt('Enter the second number');
-    } while (valid === isNaN(answerSecondNumber))
-    return answerSecondNumber;
-}
-
-const secondNumber = +getSecondNumber();
+const firstNumber = +getNumber('Enter the first number');
+const secondNumber = +getNumber('Enter the second number');
 
 function calculation() {
     let calcResult;
@@ -47,7 +35,6 @@ function calculation() {
     }
     return calcResult;
 }
-
 let result = calculation();
 
 alert(`Your Answer: ${firstNumber}${operator}${secondNumber}=${result}`);
