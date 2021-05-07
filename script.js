@@ -8,14 +8,14 @@ function getOperator() {
 const operator = getOperator();
 
 function getNumber(message) {
-    let answerFirstNumber = '';
+    let answerNumber = '';
     do {
-        answerFirstNumber = prompt(message);
-    } while (isNaN(answerFirstNumber))
-    return answerFirstNumber;
+        answerNumber = prompt(message);
+    } while (isNaN(answerNumber))
+    return +answerNumber;
 }
-const firstNumber = +getNumber('Enter the first number');
-const secondNumber = +getNumber('Enter the second number');
+const firstNumber = getNumber('Enter the first number');
+const secondNumber = getNumber('Enter the second number');
 
 function calculation() {
     let calcResult;
